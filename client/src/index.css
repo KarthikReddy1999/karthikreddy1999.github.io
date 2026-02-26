@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Terminal Luxe Theme - Pure Dark Mode */
+  --background: 0 0% 4%; /* #0A0A0A */
+  --foreground: 0 0% 96%; /* #F5F5F5 */
+  
+  --card: 0 0% 7%; /* #111111 */
+  --card-foreground: 0 0% 96%;
+  
+  --popover: 0 0% 7%;
+  --popover-foreground: 0 0% 96%;
+  
+  --primary: 155 100% 50%; /* #00FF94 - Terminal Green */
+  --primary-foreground: 0 0% 4%;
+  
+  --secondary: 35 100% 64%; /* #FFB347 - Amber */
+  --secondary-foreground: 0 0% 4%;
+  
+  --muted: 0 0% 15%; /* #262626 */
+  --muted-foreground: 0 0% 63%; /* #A0A0A0 */
+  
+  --accent: 155 100% 50%;
+  --accent-foreground: 0 0% 4%;
+  
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 96%;
+
+  --border: 0 0% 13%; /* #222222 */
+  --input: 0 0% 13%;
+  --ring: 155 100% 50%;
+
+  --radius: 0.5rem;
+
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-mono: 'Fira Code', monospace;
+}
+
+/* Force dark mode */
+.dark {
+  color-scheme: dark;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+  body {
+    @apply font-sans antialiased min-h-screen selection:bg-primary/30 selection:text-primary;
+    cursor: none; /* Custom cursor implementation handles this */
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply tracking-tight;
+  }
+  code, pre, .terminal-text {
+    font-family: var(--font-mono);
+  }
+}
+
+@layer utilities {
+  .glow-hover {
+    @apply transition-all duration-300;
+  }
+  .glow-hover:hover {
+    box-shadow: 0 0 20px rgba(0, 255, 148, 0.15);
+    border-color: rgba(0, 255, 148, 0.3);
+  }
+  
+  .text-glow {
+    text-shadow: 0 0 10px rgba(0, 255, 148, 0.3);
+  }
+
+  .glass-panel {
+    @apply bg-[#111111]/80 backdrop-blur-md border border-[#222222];
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted));
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.5);
+}
