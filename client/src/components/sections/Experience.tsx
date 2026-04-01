@@ -4,6 +4,14 @@ import { Briefcase } from "lucide-react";
 
 const experiences = [
   {
+    id: 5,
+    role: "Freelance AI Full Stack Engineer",
+    company: "AI.HYR, Hyderabad, India",
+    period: "March 2026 – Present",
+    description: "Architecting AI agent pipelines using Gemini and Azure OpenAI to automate recruitment intelligence, from skill ontology generation to semantic resume matching. Developed a specialized Critic Agent for automated content auditing with global deduplication and intelligent retry logic.",
+    tech: ["Python", "Node.js", "MongoDB", "Gemini", "Azure OpenAI", "AI Agents"]
+  },
+  {
     id: 1,
     role: "Full Stack Engineer & Automation",
     company: "Hub Group Inc, Chicago, United States",
