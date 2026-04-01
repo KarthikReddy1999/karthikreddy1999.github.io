@@ -2,7 +2,8 @@ import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Send, Loader2, CheckCircle2 } from "lucide-react";
-import { SiGithub, SiLinkedin, SiX } from "react-icons/si";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { useCreateContactMessage } from "@/hooks/use-contact";
 import { contactFormSchema, type ContactFormData } from "@/lib/contact";
 
@@ -46,13 +47,13 @@ export default function Contact() {
 
             <div className="flex items-center gap-6 pt-4">
               <a href="https://github.com/KarthikReddy1999" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full border border-[#333] flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-all glow-hover">
-                <SiGithub className="w-5 h-5" />
+                <FaGithub className="w-5 h-5" />
               </a>
               <a href="https://www.linkedin.com/in/karthikreddyereddy/" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full border border-[#333] flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-all glow-hover">
-                <SiLinkedin className="w-5 h-5" />
+                <FaLinkedin className="w-5 h-5" />
               </a>
               <a href="https://x.com/Karthi_926" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full border border-[#333] flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-all glow-hover">
-                <SiX className="w-5 h-5" />
+                <FaXTwitter className="w-5 h-5" />
               </a>
             </div>
           </motion.div>
